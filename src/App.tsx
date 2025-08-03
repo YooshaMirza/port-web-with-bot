@@ -595,8 +595,8 @@ function App() {
         >
           {/* Enhanced Floating Navbar Particles with More Layers */}
           <div className="absolute inset-0 overflow-hidden">
-            {/* Layer 1: Primary Particles */}
-            {[...Array(20)].map((_, i) => (
+            {/* Layer 1: Primary Particles - Reduced */}
+            {[...Array(8)].map((_, i) => (
               <motion.div
                 key={`nav-particle-primary-${i}`}
                 className="absolute w-1 h-1 bg-teal-400/25 rounded-full"
@@ -607,33 +607,30 @@ function App() {
                 animate={{
                   x: [
                     Math.random() * 200 - 100,
-                    Math.random() * 300 - 150,
                     Math.random() * 200 - 100
                   ],
                   y: [
                     Math.random() * 40 - 20,
-                    Math.random() * 60 - 30,
                     Math.random() * 40 - 20
                   ],
-                  opacity: [0, 0.8, 0],
-                  scale: [0.5, 1.8, 0.5],
-                  rotate: [0, 360, 720],
+                  opacity: [0, 0.7, 0],
+                  scale: [0.5, 1.5, 0.5],
                 }}
                 transition={{
-                  duration: 12 + Math.random() * 6,
+                  duration: 10,
                   repeat: Infinity,
-                  delay: Math.random() * 4,
+                  delay: Math.random() * 3,
                   ease: "easeInOut",
                 }}
                 style={{
-                  left: `${5 + (i % 10) * 9}%`,
+                  left: `${5 + (i % 8) * 12}%`,
                   top: `${15 + Math.random() * 70}%`,
                 }}
               />
             ))}
             
-            {/* Layer 2: Secondary Glow Particles */}
-            {[...Array(12)].map((_, i) => (
+            {/* Layer 2: Secondary Glow Particles - Reduced */}
+            {[...Array(5)].map((_, i) => (
               <motion.div
                 key={`nav-particle-glow-${i}`}
                 className="absolute w-2 h-2 bg-gradient-to-br from-cyan-400/15 to-blue-400/10 rounded-full blur-sm"
@@ -642,26 +639,25 @@ function App() {
                   y: Math.random() * 100,
                 }}
                 animate={{
-                  x: [0, Math.random() * 150 - 75, 0],
-                  y: [0, Math.random() * 25 - 12, 0],
-                  opacity: [0, 0.6, 0],
-                  scale: [0.3, 1.5, 0.3],
+                  x: [0, Math.random() * 100 - 50, 0],
+                  y: [0, Math.random() * 20 - 10, 0],
+                  opacity: [0, 0.5, 0],
                 }}
                 transition={{
-                  duration: 8 + Math.random() * 4,
+                  duration: 8,
                   repeat: Infinity,
-                  delay: Math.random() * 3,
+                  delay: Math.random() * 2,
                   ease: "easeInOut",
                 }}
                 style={{
-                  left: `${8 + (i % 6) * 14}%`,
+                  left: `${8 + (i % 5) * 18}%`,
                   top: `${25 + Math.random() * 50}%`,
                 }}
               />
             ))}
             
-            {/* Layer 3: Micro Sparkles */}
-            {[...Array(30)].map((_, i) => (
+            {/* Layer 3: Micro Sparkles - Reduced */}
+            {[...Array(10)].map((_, i) => (
               <motion.div
                 key={`nav-sparkle-${i}`}
                 className="absolute w-0.5 h-0.5 bg-white/30 rounded-full"
@@ -670,14 +666,13 @@ function App() {
                   y: Math.random() * 100,
                 }}
                 animate={{
-                  opacity: [0, 1, 0],
-                  scale: [0, 1, 0],
-                  rotate: [0, 180],
+                  opacity: [0, 0.8, 0],
+                  scale: [0, 0.8, 0],
                 }}
                 transition={{
-                  duration: 2 + Math.random() * 2,
+                  duration: 3,
                   repeat: Infinity,
-                  delay: Math.random() * 4,
+                  delay: Math.random() * 3,
                   ease: "easeInOut",
                 }}
                 style={{
@@ -688,32 +683,17 @@ function App() {
             ))}
           </div>
           
-          {/* Enhanced Animated Gradient Overlay with Multiple Layers */}
+          {/* Simplified Animated Gradient Overlay */}
           <motion.div
             className="absolute inset-0 bg-gradient-to-r from-teal-500/8 via-transparent to-blue-500/8"
             animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-              opacity: [0.3, 0.7, 0.3],
+              backgroundPosition: ["0% 50%", "100% 50%"],
+              opacity: 0.4,
             }}
             transition={{
-              backgroundPosition: { duration: 10, repeat: Infinity, ease: "linear" },
-              opacity: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+              backgroundPosition: { duration: 15, repeat: Infinity, ease: "linear" },
             }}
             style={{ backgroundSize: "200% 100%" }}
-          />
-          
-          {/* Additional Gradient Wave */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-l from-purple-500/5 via-transparent to-pink-500/5"
-            animate={{
-              backgroundPosition: ["100% 50%", "0% 50%", "100% 50%"],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              backgroundPosition: { duration: 8, repeat: Infinity, ease: "linear" },
-              opacity: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-            }}
-            style={{ backgroundSize: "300% 100%" }}
           />
         </motion.div>
 
@@ -741,13 +721,12 @@ function App() {
                   animate={{
                     boxShadow: [
                       "0 0 10px rgba(20, 184, 166, 0.3)",
-                      "0 0 25px rgba(20, 184, 166, 0.6)",
-                      "0 0 40px rgba(34, 211, 238, 0.4)",
+                      "0 0 20px rgba(20, 184, 166, 0.5)",
                       "0 0 10px rgba(20, 184, 166, 0.3)"
                     ]
                   }}
                   transition={{
-                    duration: 4,
+                    duration: 6,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
@@ -756,35 +735,28 @@ function App() {
                     YM
                   </div>
                   
-                  {/* Orbital Particles around Logo */}
-                  {[...Array(3)].map((_, i) => (
-                    <motion.div
-                      key={`logo-orbit-${i}`}
-                      className="absolute w-1 h-1 bg-teal-400/60 rounded-full"
-                      style={{
-                        left: '50%',
-                        top: '50%',
-                      }}
-                      animate={{
-                        x: Math.cos((i * 120 + Date.now() * 0.003) * Math.PI / 180) * 20,
-                        y: Math.sin((i * 120 + Date.now() * 0.003) * Math.PI / 180) * 20,
-                        opacity: [0.3, 1, 0.3],
-                        scale: [0.5, 1, 0.5],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: i * 0.4,
-                      }}
-                    />
-                  ))}
+                  {/* Single dot instead of orbital particles */}
+                  <motion.div
+                    className="absolute w-1 h-1 bg-teal-400/60 rounded-full"
+                    style={{
+                      left: '75%',
+                      top: '25%',
+                    }}
+                    animate={{
+                      opacity: [0.3, 0.8, 0.3],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
                 </motion.div>
               </motion.div>
             </motion.div>
 
             {/* Enhanced Navigation Links with Advanced Animations */}
-            <div className="flex items-center space-x-2 md:space-x-6">
+            <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-6">
               {[
                 { href: "#about", label: "About", icon: "👨‍💻" },
                 { href: "#experience", label: "Experience", icon: "💼" },
@@ -795,7 +767,7 @@ function App() {
                 <motion.a 
                   key={item.href}
                   href={item.href} 
-                  className="relative group font-medium px-3 md:px-4 py-2 rounded-xl text-gray-600 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-all duration-300 overflow-hidden"
+                  className="relative group font-medium px-2 sm:px-3 md:px-4 py-2 rounded-xl text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-all duration-300 overflow-hidden"
                   initial={{ opacity: 0, y: -30, scale: 0.8 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ 
@@ -807,7 +779,6 @@ function App() {
                   whileHover={{ 
                     scale: 1.08, 
                     y: -3,
-                    rotateY: 5,
                     transition: { type: "spring", stiffness: 400, damping: 20 }
                   }}
                   whileTap={{ scale: 0.95 }}
@@ -832,25 +803,12 @@ function App() {
                     transition={{ duration: 0.4 }}
                   />
                   
-                  {/* Enhanced Floating Icon with More Animations */}
+                  {/* Simplified Icon Animation */}
                   <motion.span 
                     className="hidden md:inline-block mr-2 text-sm relative"
                     style={{ filter: 'none' }}
-                    animate={{ 
-                      y: [0, -3, 0],
-                      rotate: [0, 8, -8, 0],
-                      scale: [1, 1.1, 1]
-                    }}
-                    transition={{ 
-                      duration: 3,
-                      repeat: Infinity,
-                      delay: index * 0.4,
-                      ease: "easeInOut"
-                    }}
                     whileHover={{
-                      y: -5,
-                      rotate: 15,
-                      scale: 1.3,
+                      scale: 1.2,
                       transition: { duration: 0.2 }
                     }}
                   >
@@ -883,31 +841,29 @@ function App() {
                     }}
                   />
                   
-                  {/* Enhanced Particle Trail with More Particles */}
+                  {/* Removed Particle Trail for Performance */}
                   <motion.div
                     className="absolute inset-0 pointer-events-none"
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
                   >
-                    {[...Array(5)].map((_, i) => (
+                    {/* Reduced to 2 particles */}
+                    {[...Array(2)].map((_, i) => (
                       <motion.div
                         key={i}
                         className="absolute w-1 h-1 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full"
                         style={{
-                          left: `${15 + i * 15}%`,
-                          top: `${25 + Math.random() * 50}%`,
+                          left: `${25 + i * 25}%`,
+                          top: `${50}%`,
                         }}
                         animate={{
-                          y: [0, -15, 0],
-                          x: [0, Math.random() * 10 - 5, 0],
-                          opacity: [0, 1, 0],
-                          scale: [0.3, 1.2, 0.3],
-                          rotate: [0, 180, 360],
+                          opacity: [0, 0.8, 0],
+                          scale: [0.3, 1, 0.3],
                         }}
                         transition={{
                           duration: 1.5,
                           repeat: Infinity,
-                          delay: i * 0.15,
+                          delay: i * 0.2,
                           ease: "easeInOut",
                         }}
                       />
@@ -969,9 +925,9 @@ function App() {
                   transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 />
                 
-                {/* Enhanced Orbital Particles with More Complexity */}
+                {/* Simplified Orbital Particles */}
                 <div className="absolute inset-0 pointer-events-none">
-                  {[...Array(6)].map((_, i) => (
+                  {[...Array(2)].map((_, i) => (
                     <motion.div
                       key={i}
                       className={`absolute w-1 h-1 ${darkMode ? 'bg-yellow-400/70' : 'bg-purple-400/70'} rounded-full`}
@@ -980,17 +936,14 @@ function App() {
                         top: '50%',
                       }}
                       animate={{
-                        x: Math.cos((i * 60 + Date.now() * 0.004) * Math.PI / 180) * (18 + i * 2),
-                        y: Math.sin((i * 60 + Date.now() * 0.004) * Math.PI / 180) * (18 + i * 2),
-                        opacity: [0.3, 1, 0.3],
-                        scale: [0.5, 1.2, 0.5],
-                        rotate: [0, 180, 360],
+                        x: Math.cos((i * 180) * Math.PI / 180) * 18,
+                        y: Math.sin((i * 180) * Math.PI / 180) * 18,
+                        opacity: [0.3, 0.8, 0.3],
                       }}
                       transition={{
-                        duration: 4 + i * 0.5,
+                        duration: 4,
                         repeat: Infinity,
                         ease: "easeInOut",
-                        delay: i * 0.2,
                       }}
                     />
                   ))}
@@ -1039,68 +992,42 @@ function App() {
                   )}
                 </motion.div>
                 
-                {/* Enhanced Multiple Ripple Effects */}
-                {[...Array(3)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute inset-0 rounded-xl border-2 border-teal-400/15"
-                    animate={{
-                      scale: [1, 1.4 + i * 0.2, 1],
-                      opacity: [0.4, 0, 0.4],
-                      borderColor: [
-                        "rgba(20, 184, 166, 0.15)",
-                        "rgba(34, 211, 238, 0.3)",
-                        "rgba(20, 184, 166, 0.15)"
-                      ]
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: i * 0.5,
-                    }}
-                  />
-                ))}
+                {/* Removed Multiple Ripples for better performance - just one simpler effect */}
+                <motion.div
+                  className="absolute inset-0 rounded-xl border-2 border-teal-400/15"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.1, 0.3],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
               </motion.button>
             </div>
           </div>
         </div>
         
-        {/* Enhanced Animated Bottom Border with Wave Effect */}
+        {/* Simplified Bottom Border */}
         <div className="absolute bottom-0 left-0 right-0 h-px overflow-hidden">
           <motion.div
             className="h-full bg-gradient-to-r from-transparent via-teal-400/60 to-transparent"
             animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-              opacity: [0.4, 0.9, 0.4],
-              scaleX: [0.8, 1.2, 0.8],
+              backgroundPosition: ["0% 50%", "100% 50%"],
+              opacity: 0.5,
             }}
             transition={{
-              backgroundPosition: { duration: 5, repeat: Infinity, ease: "linear" },
-              opacity: { duration: 2.5, repeat: Infinity, ease: "easeInOut" },
-              scaleX: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+              backgroundPosition: { duration: 8, repeat: Infinity, ease: "linear" },
             }}
             style={{ backgroundSize: "200% 100%" }}
-          />
-          
-          {/* Secondary Wave */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent"
-            animate={{
-              backgroundPosition: ["100% 50%", "0% 50%", "100% 50%"],
-              opacity: [0.2, 0.6, 0.2],
-            }}
-            transition={{
-              backgroundPosition: { duration: 7, repeat: Infinity, ease: "linear" },
-              opacity: { duration: 3.5, repeat: Infinity, ease: "easeInOut" }
-            }}
-            style={{ backgroundSize: "300% 100%" }}
           />
         </div>
       </motion.nav>
 
       {/* Hero Section - Matching Website Vibe with Same Animations */}
-      <section className="pt-32 pb-20 relative overflow-hidden min-h-screen flex items-center">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 relative overflow-hidden min-h-screen flex items-center">
         {/* Background matching website's sophisticated theme */}
         <div className="absolute inset-0">
           {/* Primary Dark Gradient Background matching other sections */}
@@ -1120,10 +1047,10 @@ function App() {
             transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
           />
           
-          {/* Multiple Layers of Floating Particles with website colors */}
+          {/* Significantly Reduced Floating Particles */}
           <div className="absolute inset-0">
-            {/* Layer 1: Teal particles */}
-            {[...Array(25)].map((_, i) => (
+            {/* Layer 1: Minimal Teal particles */}
+            {[...Array(8)].map((_, i) => (
               <motion.div
                 key={`teal-${i}`}
                 className="absolute w-1 h-1 bg-teal-400/10 rounded-full"
@@ -1132,45 +1059,20 @@ function App() {
                   y: Math.random() * window.innerHeight,
                 }}
                 animate={{
-                  y: [0, -200, 0],
-                  x: [0, Math.random() * 100 - 50, 0],
-                  opacity: [0, 0.3, 0],
-                  scale: [1, 1.5, 1],
-                }}
-                transition={{
-                  duration: Math.random() * 5 + 4,
-                  repeat: Infinity,
-                  delay: Math.random() * 3,
-                  ease: "easeInOut",
-                }}
-              />
-            ))}
-            
-            {/* Layer 2: Grey particles matching website */}
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={`grey-${i}`}
-                className="absolute w-0.5 h-0.5 bg-slate-400/8 rounded-full"
-                initial={{
-                  x: Math.random() * window.innerWidth,
-                  y: Math.random() * window.innerHeight,
-                }}
-                animate={{
                   y: [0, -150, 0],
-                  x: [0, Math.random() * 80 - 40, 0],
-                  opacity: [0, 0.25, 0],
+                  opacity: [0, 0.3, 0],
                 }}
                 transition={{
-                  duration: Math.random() * 6 + 3,
+                  duration: 6,
                   repeat: Infinity,
-                  delay: Math.random() * 4,
+                  delay: Math.random() * 2,
                   ease: "easeInOut",
                 }}
               />
             ))}
             
-            {/* Layer 3: Larger ambient particles */}
-            {[...Array(15)].map((_, i) => (
+            {/* Layer 2: Minimal ambient particles */}
+            {[...Array(5)].map((_, i) => (
               <motion.div
                 key={`ambient-${i}`}
                 className="absolute w-2 h-2 bg-gradient-to-br from-teal-400/3 to-slate-400/3 rounded-full blur-sm"
@@ -1179,15 +1081,12 @@ function App() {
                   y: Math.random() * window.innerHeight,
                 }}
                 animate={{
-                  y: [0, -100, 0],
-                  x: [0, Math.random() * 120 - 60, 0],
                   opacity: [0, 0.15, 0],
-                  scale: [0.5, 1.2, 0.5],
                 }}
                 transition={{
-                  duration: Math.random() * 8 + 5,
+                  duration: 8,
                   repeat: Infinity,
-                  delay: Math.random() * 5,
+                  delay: Math.random() * 3,
                   ease: "easeInOut",
                 }}
               />
@@ -1208,39 +1107,24 @@ function App() {
                 linear-gradient(90deg, rgba(100, 116, 139, 0.03) 1px, transparent 1px)
               `,
               backgroundSize: '60px 60px, 60px 60px, 20px 20px, 20px 20px',
-              transform: 'perspective(1000px) rotateX(20deg)',
             }}
           />
           
-          {/* Animated Light Rays with subtle colors */}
+          {/* Removed Animated Light Rays for better performance */}
           <motion.div
             className="absolute inset-0 pointer-events-none"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3, delay: 1 }}
+            animate={{ opacity: 0.5 }}
+            transition={{ duration: 3 }}
           >
-            {[...Array(8)].map((_, i) => (
-              <motion.div
-                key={`ray-${i}`}
-                className="absolute w-px h-32 bg-gradient-to-t from-transparent via-teal-400/5 to-transparent"
-                style={{
-                  left: `${10 + i * 12}%`,
-                  top: '20%',
-                  transformOrigin: 'bottom',
-                }}
-                animate={{
-                  scaleY: [0, 1, 0],
-                  opacity: [0, 0.4, 0],
-                  rotate: [0, 5, -5, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  delay: i * 0.3,
-                  ease: "easeInOut",
-                }}
-              />
-            ))}
+            {/* Static light effect instead of animated rays */}
+            <div
+              className="absolute w-full h-64 bg-gradient-to-b from-teal-400/5 to-transparent"
+              style={{
+                top: '10%',
+                opacity: 0.3,
+              }}
+            />
           </motion.div>
         </div>
         
@@ -1781,32 +1665,29 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 relative overflow-hidden">
+      <section id="about" className="py-12 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-300 via-slate-100 to-slate-300 dark:from-slate-700 dark:via-slate-900 dark:to-slate-700 opacity-90"></div>
         
         {/* Background Animations for About Section */}
         <div className="absolute inset-0">
-          {/* Multiple Layers of Floating Particles */}
+          {/* Minimal Decoration Elements */}
           <div className="absolute inset-0">
-            {/* Layer 1: Teal particles */}
-            {[...Array(15)].map((_, i) => (
+            {/* Reduced Teal particles */}
+            {[...Array(5)].map((_, i) => (
               <motion.div
                 key={`about-teal-${i}`}
                 className="absolute w-1 h-1 bg-teal-400/8 rounded-full"
-                initial={{
-                  x: Math.random() * window.innerWidth,
-                  y: Math.random() * window.innerHeight,
+                style={{
+                  left: `${20 + i * 15}%`,
+                  top: `${30 + i * 10}%`,
                 }}
                 animate={{
-                  y: [0, -200, 0],
-                  x: [0, Math.random() * 100 - 50, 0],
-                  opacity: [0, 0.25, 0],
-                  scale: [1, 1.5, 1],
+                  opacity: [0, 0.2, 0],
                 }}
                 transition={{
-                  duration: Math.random() * 6 + 5,
+                  duration: 6,
                   repeat: Infinity,
-                  delay: Math.random() * 4,
+                  delay: i,
                   ease: "easeInOut",
                 }}
               />
@@ -1896,29 +1777,26 @@ function App() {
             ))}
           </div>
           
-          {/* Enhanced Floating Bubbles for About */}
+          {/* Reduced Floating Bubbles for About */}
           <div className="absolute inset-0 pointer-events-none">
-            {[...Array(25)].map((_, i) => (
+            {[...Array(8)].map((_, i) => (
               <motion.div
                 key={`about-bubble-${i}`}
                 className="absolute rounded-full bg-gradient-to-br from-teal-400/10 to-cyan-400/5 border border-teal-400/20"
                 style={{
-                  width: Math.random() * 60 + 20,
-                  height: Math.random() * 60 + 20,
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
+                  width: Math.random() * 40 + 20,
+                  height: Math.random() * 40 + 20,
+                  left: `${10 + (i % 4) * 20}%`,
+                  top: `${20 + (Math.floor(i / 4)) * 30}%`,
                 }}
                 animate={{
-                  y: [0, -200 - Math.random() * 100],
-                  x: [0, Math.random() * 100 - 50],
-                  opacity: [0, 0.6, 0],
-                  scale: [0.5, 1.2, 0.3],
-                  rotate: [0, 360],
+                  y: [0, -100],
+                  opacity: [0, 0.4, 0],
                 }}
                 transition={{
-                  duration: 8 + Math.random() * 4,
+                  duration: 8,
                   repeat: Infinity,
-                  delay: Math.random() * 3,
+                  delay: i * 0.5,
                   ease: "easeInOut",
                 }}
               />
@@ -2059,80 +1937,65 @@ function App() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 relative overflow-hidden">
+      <section id="experience" className="py-12 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-300 via-slate-100 to-slate-300 dark:from-slate-700 dark:via-slate-900 dark:to-slate-700 opacity-90"></div>
         
         {/* Background Animations for Experience Section */}
         <div className="absolute inset-0">
-          {/* Multiple Layers of Floating Particles */}
+          {/* Reduced Floating Particles */}
           <div className="absolute inset-0">
-            {/* Layer 1: Professional particles */}
-            {[...Array(18)].map((_, i) => (
+            {/* Layer 1: Minimal Professional particles */}
+            {[...Array(6)].map((_, i) => (
               <motion.div
                 key={`exp-particles-${i}`}
                 className="absolute w-1.5 h-1.5 bg-blue-400/10 rounded-full"
-                initial={{
-                  x: Math.random() * window.innerWidth,
-                  y: Math.random() * window.innerHeight,
+                style={{
+                  left: `${10 + i * 15}%`,
+                  top: `${20 + (i % 3) * 25}%`,
                 }}
                 animate={{
-                  y: [0, -180, 0],
-                  x: [0, Math.random() * 120 - 60, 0],
+                  y: [0, -60, 0],
                   opacity: [0, 0.3, 0],
-                  scale: [1, 1.6, 1],
                 }}
                 transition={{
-                  duration: Math.random() * 7 + 6,
+                  duration: 6,
                   repeat: Infinity,
-                  delay: Math.random() * 5,
+                  delay: i * 0.5,
                   ease: "easeInOut",
                 }}
               />
             ))}
             
-            {/* Layer 2: Career-themed bubbles */}
-            {[...Array(12)].map((_, i) => (
+            {/* Layer 2: Minimal Career-themed bubbles */}
+            {[...Array(4)].map((_, i) => (
               <motion.div
                 key={`exp-bubbles-${i}`}
                 className="absolute w-3 h-3 bg-gradient-to-br from-purple-400/6 to-indigo-400/6 rounded-full blur-sm"
-                initial={{
-                  x: Math.random() * window.innerWidth,
-                  y: Math.random() * window.innerHeight,
+                style={{
+                  left: `${25 + i * 20}%`,
+                  top: `${40 + (i % 2) * 30}%`,
                 }}
                 animate={{
-                  y: [0, -160, 0],
-                  x: [0, Math.random() * 100 - 50, 0],
-                  opacity: [0, 0.25, 0],
-                  scale: [0.6, 1.4, 0.6],
+                  opacity: [0, 0.2, 0],
                 }}
                 transition={{
-                  duration: Math.random() * 9 + 7,
+                  duration: 8,
                   repeat: Infinity,
-                  delay: Math.random() * 7,
+                  delay: i * 0.8,
                   ease: "easeInOut",
                 }}
               />
             ))}
           </div>
           
-          {/* Enhanced Floating Professional Keywords - More Frequent */}
+          {/* Reduced Floating Professional Keywords */}
           <div className="absolute inset-0 pointer-events-none">
             {[
               { text: "Innovation", color: "from-blue-400 to-cyan-400" },
               { text: "Leadership", color: "from-purple-400 to-indigo-400" },
               { text: "Growth", color: "from-teal-400 to-emerald-400" },
               { text: "Excellence", color: "from-indigo-400 to-purple-400" },
-              { text: "Impact", color: "from-cyan-400 to-blue-400" },
-              { text: "Experience", color: "from-emerald-400 to-teal-400" },
-              { text: "Skills", color: "from-purple-400 to-pink-400" },
-              { text: "Career", color: "from-blue-400 to-indigo-400" },
-              { text: "Success", color: "from-teal-400 to-cyan-400" },
-              { text: "Achievement", color: "from-pink-400 to-rose-400" },
-              { text: "Professional", color: "from-indigo-400 to-blue-400" },
-              { text: "Development", color: "from-cyan-400 to-teal-400" },
-              { text: "Expertise", color: "from-violet-400 to-purple-400" },
-              { text: "Mentoring", color: "from-emerald-400 to-green-400" },
-              { text: "Vision", color: "from-amber-400 to-orange-400" }
+              { text: "Skills", color: "from-purple-400 to-pink-400" }
             ].map((word, index) => (
               <motion.span
                 key={`exp-${word.text}`}
@@ -2174,27 +2037,23 @@ function App() {
             ))}
           </div>
           
-          {/* Enhanced Professional Bubbles */}
+          {/* Reduced Professional Bubbles */}
           <div className="absolute inset-0 pointer-events-none">
-            {[...Array(30)].map((_, i) => (
+            {[...Array(8)].map((_, i) => (
               <motion.div
                 key={`exp-pro-bubble-${i}`}
                 className="absolute rounded-full bg-gradient-to-br from-blue-400/8 to-purple-400/4 border border-blue-400/15"
                 style={{
-                  width: Math.random() * 80 + 25,
-                  height: Math.random() * 80 + 25,
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
+                  width: 40 + (i % 4) * 15,
+                  height: 40 + (i % 4) * 15,
+                  left: `${10 + (i % 4) * 25}%`,
+                  top: `${20 + Math.floor(i / 4) * 40}%`,
                 }}
                 animate={{
-                  y: [0, -250 - Math.random() * 120],
-                  x: [0, Math.random() * 120 - 60],
-                  opacity: [0, 0.7, 0],
-                  scale: [0.4, 1.3, 0.2],
-                  rotate: [0, 180, 360],
+                  opacity: [0, 0.4, 0],
                 }}
                 transition={{
-                  duration: 10 + Math.random() * 5,
+                  duration: 8,
                   repeat: Infinity,
                   delay: Math.random() * 4,
                   ease: "easeInOut",
@@ -2516,66 +2375,51 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 relative overflow-hidden">
+      <section id="projects" className="py-12 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-300 via-slate-100 to-slate-300 dark:from-slate-700 dark:via-slate-900 dark:to-slate-700 opacity-90"></div>
         
         {/* Enhanced Background Animations for Projects Section - More Frequent Throughout */}
         <div className="absolute inset-0">
-          {/* Multiple Layers of Floating Particles */}
+          {/* Minimized Layers of Floating Particles */}
           <div className="absolute inset-0">
-            {/* Layer 1: Creative particles - Increased */}
-            {[...Array(35)].map((_, i) => (
+            {/* Layer 1: Creative particles - Significantly Reduced */}
+            {[...Array(8)].map((_, i) => (
               <motion.div
                 key={`projects-particles-${i}`}
                 className="absolute w-1.5 h-1.5 bg-emerald-400/15 rounded-full"
-                initial={{
-                  x: Math.random() * 100 + 10,
-                  y: Math.random() * 100 + 10,
+                style={{
+                  left: `${10 + (i % 4) * 20}%`,
+                  top: `${20 + Math.floor(i / 4) * 30}%`,
                 }}
                 animate={{
-                  y: [0, -250 - Math.random() * 100],
-                  x: [0, Math.random() * 140 - 70],
-                  opacity: [0, 0.8, 0],
-                  scale: [1, 2, 1],
+                  opacity: [0, 0.4, 0],
                 }}
                 transition={{
-                  duration: Math.random() * 6 + 4,
+                  duration: 7,
                   repeat: Infinity,
-                  delay: Math.random() * 3,
+                  delay: i * 0.5,
                   ease: "easeInOut",
-                }}
-                style={{
-                  left: `${(i % 8) * 12.5}%`,
-                  top: `${Math.floor(i / 8) * 20}%`,
                 }}
               />
             ))}
             
-            {/* Layer 2: Project-themed elements - Increased */}
-            {[...Array(25)].map((_, i) => (
+            {/* Layer 2: Project-themed elements - Minimal Static Version */}
+            {[...Array(6)].map((_, i) => (
               <motion.div
                 key={`projects-elements-${i}`}
                 className="absolute w-3 h-3 bg-gradient-to-br from-emerald-400/10 to-cyan-400/8 rounded-full blur-sm"
-                initial={{
-                  x: Math.random() * 100 + 10,
-                  y: Math.random() * 100 + 10,
+                style={{
+                  left: `${15 + i * 15}%`,
+                  top: `${40 + (i % 2) * 20}%`,
                 }}
                 animate={{
-                  y: [0, -200 - Math.random() * 80],
-                  x: [0, Math.random() * 120 - 60],
-                  opacity: [0, 0.6, 0],
-                  scale: [0.4, 1.8, 0.4],
-                  rotate: [0, 360],
+                  opacity: [0, 0.3, 0],
                 }}
                 transition={{
-                  duration: Math.random() * 8 + 5,
+                  duration: 6,
                   repeat: Infinity,
-                  delay: Math.random() * 4,
+                  delay: i * 0.8,
                   ease: "easeInOut",
-                }}
-                style={{
-                  left: `${5 + (i % 6) * 15}%`,
-                  top: `${10 + Math.floor(i / 6) * 22}%`,
                 }}
               />
             ))}
@@ -2777,7 +2621,7 @@ function App() {
                         <motion.div
                           key={`${project?.title || 'project'}-${index}`}
                           variants={fadeInUp}
-                          className="group glass-card p-8 flex flex-col justify-between shadow-xl border border-teal-400/20 dark:border-teal-400/10 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 cursor-pointer rounded-2xl overflow-hidden"
+                          className="group glass-card p-5 sm:p-6 md:p-8 flex flex-col justify-between shadow-xl border border-teal-400/20 dark:border-teal-400/10 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 cursor-pointer rounded-2xl overflow-hidden"
                           style={{ minHeight: '350px' }}
                           whileHover={{ scale: 1.02, y: -8, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
                           transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -3096,66 +2940,51 @@ function App() {
       </section>
 
       {/* Research Section */}
-      <section id="research" className="py-20 relative overflow-hidden">
+      <section id="research" className="py-12 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-300 via-slate-100 to-slate-300 dark:from-slate-700 dark:via-slate-900 dark:to-slate-700 opacity-90"></div>
         
         {/* Enhanced Background Animations for Research Section - More Frequent */}
         <div className="absolute inset-0">
-          {/* Multiple Layers of Floating Particles */}
+          {/* Minimal Floating Particles */}
           <div className="absolute inset-0">
-            {/* Layer 1: Academic particles - Increased */}
-            {[...Array(28)].map((_, i) => (
+            {/* Layer 1: Academic particles - Greatly Reduced */}
+            {[...Array(5)].map((_, i) => (
               <motion.div
                 key={`research-particles-${i}`}
                 className="absolute w-1.5 h-1.5 bg-purple-400/12 rounded-full"
-                initial={{
-                  x: Math.random() * 100 + 10,
-                  y: Math.random() * 100 + 10,
+                style={{
+                  left: `${15 + i * 18}%`,
+                  top: `${30 + (i % 3) * 20}%`,
                 }}
                 animate={{
-                  y: [0, -220 - Math.random() * 80],
-                  x: [0, Math.random() * 100 - 50],
-                  opacity: [0, 0.7, 0],
-                  scale: [1, 1.9, 1],
+                  opacity: [0, 0.5, 0],
                 }}
                 transition={{
-                  duration: Math.random() * 6 + 5,
+                  duration: 6,
                   repeat: Infinity,
-                  delay: Math.random() * 4,
+                  delay: i * 0.5,
                   ease: "easeInOut",
-                }}
-                style={{
-                  left: `${(i % 7) * 14}%`,
-                  top: `${Math.floor(i / 7) * 22}%`,
                 }}
               />
             ))}
             
-            {/* Layer 2: Knowledge bubbles - Increased */}
-            {[...Array(20)].map((_, i) => (
+            {/* Layer 2: Knowledge bubbles - Reduced to Static Elements */}
+            {[...Array(5)].map((_, i) => (
               <motion.div
                 key={`research-bubbles-${i}`}
                 className="absolute w-2.5 h-2.5 bg-gradient-to-br from-purple-400/9 to-pink-400/7 rounded-full blur-sm"
-                initial={{
-                  x: Math.random() * 100 + 10,
-                  y: Math.random() * 100 + 10,
+                style={{
+                  left: `${20 + i * 15}%`,
+                  top: `${50 + (i % 3) * 10}%`,
                 }}
                 animate={{
-                  y: [0, -190 - Math.random() * 70],
-                  x: [0, Math.random() * 90 - 45],
-                  opacity: [0, 0.6, 0],
-                  scale: [0.5, 1.7, 0.5],
-                  rotate: [0, 360],
+                  opacity: [0, 0.4, 0],
                 }}
                 transition={{
-                  duration: Math.random() * 8 + 6,
+                  duration: 7,
                   repeat: Infinity,
-                  delay: Math.random() * 5,
+                  delay: i * 0.7,
                   ease: "easeInOut",
-                }}
-                style={{
-                  left: `${8 + (i % 5) * 18}%`,
-                  top: `${12 + Math.floor(i / 5) * 24}%`,
                 }}
               />
             ))}
@@ -3165,16 +2994,8 @@ function App() {
           <div className="absolute inset-0 pointer-events-none">
             {[
               { text: "Discovery", color: "from-purple-400 to-indigo-400" },
-              { text: "Analysis", color: "from-indigo-400 to-purple-400" },
-              { text: "Papers", color: "from-pink-400 to-purple-400" },
-              { text: "Study", color: "from-purple-400 to-pink-400" },
-              { text: "Insights", color: "from-indigo-400 to-blue-400" },
               { text: "Research", color: "from-violet-400 to-purple-400" },
               { text: "Science", color: "from-purple-400 to-fuchsia-400" },
-              { text: "Innovation", color: "from-magenta-400 to-purple-400" },
-              { text: "Method", color: "from-blue-400 to-indigo-400" },
-              { text: "Theory", color: "from-indigo-400 to-violet-400" },
-              { text: "Experiment", color: "from-purple-400 to-pink-400" },
               { text: "Data", color: "from-cyan-400 to-blue-400" }
             ].map((word, index) => (
               <motion.span
@@ -3186,30 +3007,18 @@ function App() {
                   opacity: 0,
                 }}
                 animate={{
-                  x: [
-                    Math.random() * 350 - 175,
-                    Math.random() * 450 - 225,
-                    Math.random() * 350 - 175
-                  ],
-                  y: [
-                    Math.random() * 350 - 175,
-                    Math.random() * 450 - 225,
-                    Math.random() * 350 - 175
-                  ],
-                  opacity: [0, 0.9, 0],
-                  rotate: [0, 300, 600],
-                  scale: [0.7, 1.5, 0.7],
+                  opacity: [0.3, 0.7, 0.3],
                 }}
                 transition={{
-                  duration: 11 + Math.random() * 5,
+                  duration: 8,
                   repeat: Infinity,
-                  delay: index * 0.9,
+                  delay: index * 1.2,
                   ease: "easeInOut",
                 }}
                 style={{
-                  left: `${4 + (index % 5) * 18}%`,
-                  top: `${8 + Math.floor(index / 5) * 26}%`,
-                  textShadow: `0 0 30px rgba(147, 51, 234, 0.4)`
+                  left: `${15 + index * 20}%`,
+                  top: `${30 + (index % 2) * 25}%`,
+                  textShadow: `0 0 15px rgba(147, 51, 234, 0.3)`
                 }}
               >
                 {word.text}
@@ -3217,29 +3026,25 @@ function App() {
             ))}
           </div>
           
-          {/* Enhanced Research Academic Bubbles */}
+          {/* Simplified Research Academic Bubbles */}
           <div className="absolute inset-0 pointer-events-none">
-            {[...Array(35)].map((_, i) => (
+            {[...Array(6)].map((_, i) => (
               <motion.div
                 key={`research-academic-bubble-${i}`}
                 className="absolute rounded-full bg-gradient-to-br from-purple-400/8 to-indigo-400/5 border border-purple-400/15"
                 style={{
-                  width: Math.random() * 85 + 30,
-                  height: Math.random() * 85 + 30,
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
+                  width: 50 + (i % 3) * 20,
+                  height: 50 + (i % 3) * 20,
+                  left: `${10 + (i % 3) * 30}%`,
+                  top: `${20 + Math.floor(i / 3) * 40}%`,
                 }}
                 animate={{
-                  y: [0, -280 - Math.random() * 120],
-                  x: [0, Math.random() * 130 - 65],
-                  opacity: [0, 0.8, 0],
-                  scale: [0.3, 1.4, 0.1],
-                  rotate: [0, 240, 480],
+                  opacity: [0, 0.5, 0],
                 }}
                 transition={{
-                  duration: 13 + Math.random() * 6,
+                  duration: 8,
                   repeat: Infinity,
-                  delay: Math.random() * 5,
+                  delay: i * 0.8,
                   ease: "easeInOut",
                 }}
               />
@@ -3322,14 +3127,14 @@ function App() {
             whileInView="visible"
             variants={staggerContainer}
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
           >
             {/* Card 1: Dermatology */}
             <motion.div
               variants={fadeInUp}
-              className="glass-card p-8 shadow-lg border border-teal-400/20 dark:border-teal-400/10 transition-all duration-300 bg-white/80 dark:bg-gray-900/80 flex flex-col justify-between text-left max-w-xl mx-auto"
-              style={{ minHeight: '440px' }}
-              whileHover={{ scale: 1.05, y: -5, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+              className="glass-card p-5 sm:p-6 md:p-8 shadow-lg border border-teal-400/20 dark:border-teal-400/10 transition-all duration-300 bg-white/80 dark:bg-gray-900/80 flex flex-col justify-between text-left max-w-xl mx-auto"
+              style={{ minHeight: 'auto', height: '100%' }}
+              whileHover={{ scale: 1.03, y: -3, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <div>
@@ -3363,16 +3168,16 @@ function App() {
             {/* Card 2: Brain Tumor */}
             <motion.div
               variants={fadeInUp}
-              className="glass-card p-8 shadow-lg border border-teal-400/20 dark:border-teal-400/10 transition-all duration-300 bg-white/80 dark:bg-gray-900/80 flex flex-col justify-between text-left max-w-xl mx-auto"
-              style={{ minHeight: '420px' }}
-              whileHover={{ scale: 1.05, y: -5, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+              className="glass-card p-5 sm:p-6 md:p-8 shadow-lg border border-teal-400/20 dark:border-teal-400/10 transition-all duration-300 bg-white/80 dark:bg-gray-900/80 flex flex-col justify-between text-left max-w-xl mx-auto"
+              style={{ minHeight: 'auto', height: '100%' }}
+              whileHover={{ scale: 1.03, y: -3, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <div>
                 <div className="flex items-start mb-2">
-                  <BookOpen className="mr-2 mt-1 text-teal-400" size={22} />
+                  <BookOpen className="mr-2 mt-1 text-teal-400" size={20} />
                   <div className="flex-1">
-                    <div className="font-bold text-lg text-gray-900 dark:text-white group-hover:text-teal-400 transition-colors duration-200 leading-snug">
+                    <div className="font-bold text-base sm:text-lg text-gray-900 dark:text-white group-hover:text-teal-400 transition-colors duration-200 leading-snug">
                       Deep Learning-Based Brain Tumor Identification Using Custom CNN
                     </div>
                     <div className="flex items-center mt-1">
@@ -3380,7 +3185,7 @@ function App() {
                     </div>
                   </div>
                 </div>
-                <div className="text-gray-600 dark:text-gray-300 text-[15px] leading-relaxed space-y-4 mb-4 mt-2">
+                <div className="text-gray-600 dark:text-gray-300 text-sm sm:text-[15px] leading-relaxed space-y-2 sm:space-y-4 mb-4 mt-2">
                   <p>Our research presents a custom Convolutional Neural Network (CNN) model tailored for classifying four types of brain tumors using MRI scans: glioma, meningioma, pituitary tumor, and no tumor. Achieving a testing accuracy of 97.10%, the model leverages deep learning to significantly improve diagnostic accuracy, speed, and consistency in neuroimaging.</p>
                   <p>To validate its performance, we compared our custom model against well-known pre-trained CNN architectures including Xception, ResNet50, EfficientNetB4, DenseNet121, and MobileNetV2. Our custom CNN stood out by offering a strong balance of accuracy and computational efficiency, making it highly suitable for real-time medical applications, even in resource-limited settings.</p>
                   <p>The study employs data augmentation, dilated convolutions, and residual connections, alongside optimized training strategies using TensorFlow. This ensures the model can generalize well, even with limited labeled data — a common constraint in medical imaging.</p>
@@ -3393,15 +3198,15 @@ function App() {
       </section>
 
       {/* Education Section (moved after Research) */}
-      <section id="education" className="py-20 relative overflow-hidden">
+      <section id="education" className="py-12 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-300 via-slate-100 to-slate-300 dark:from-slate-700 dark:via-slate-900 dark:to-slate-700 opacity-90"></div>
         
         {/* Enhanced Background Animations for Education Section - More Frequent */}
         <div className="absolute inset-0">
           {/* Multiple Layers of Floating Particles */}
           <div className="absolute inset-0">
-            {/* Layer 1: Academic achievement particles - Increased */}
-            {[...Array(25)].map((_, i) => (
+            {/* Layer 1: Academic achievement particles - Reduced for mobile */}
+            {[...Array(8)].map((_, i) => (
               <motion.div
                 key={`education-particles-${i}`}
                 className="absolute w-1.5 h-1.5 bg-amber-400/15 rounded-full"
@@ -3458,55 +3263,34 @@ function App() {
             ))}
           </div>
           
-          {/* Enhanced Floating Education Keywords - More Frequent */}
+          {/* Enhanced Floating Education Keywords - Reduced for Mobile */}
           <div className="absolute inset-0 pointer-events-none">
             {[
               { text: "Learn", color: "from-amber-400 to-orange-400" },
               { text: "Growth", color: "from-orange-400 to-red-400" },
               { text: "Knowledge", color: "from-yellow-400 to-amber-400" },
-              { text: "Achievement", color: "from-red-400 to-pink-400" },
-              { text: "Study", color: "from-amber-400 to-yellow-400" },
-              { text: "Excellence", color: "from-orange-400 to-amber-400" },
               { text: "Academic", color: "from-yellow-400 to-orange-400" },
-              { text: "Success", color: "from-red-400 to-rose-400" },
-              { text: "Degree", color: "from-pink-400 to-red-400" },
-              { text: "Skills", color: "from-amber-400 to-orange-400" },
-              { text: "Education", color: "from-orange-400 to-yellow-400" },
-              { text: "Progress", color: "from-yellow-400 to-lime-400" }
+              { text: "Education", color: "from-orange-400 to-yellow-400" }
             ].map((word, index) => (
               <motion.span
                 key={`education-${word.text}`}
-                className={`absolute bg-gradient-to-r ${word.color} bg-clip-text text-transparent text-lg font-semibold`}
+                className={`absolute bg-gradient-to-r ${word.color} bg-clip-text text-transparent text-base sm:text-lg font-semibold hidden sm:block`}
                 initial={{
-                  x: Math.random() * 100 + 10,
-                  y: Math.random() * 100 + 10,
                   opacity: 0,
                 }}
                 animate={{
-                  x: [
-                    Math.random() * 320 - 160,
-                    Math.random() * 420 - 210,
-                    Math.random() * 320 - 160
-                  ],
-                  y: [
-                    Math.random() * 320 - 160,
-                    Math.random() * 420 - 210,
-                    Math.random() * 320 - 160
-                  ],
-                  opacity: [0, 0.9, 0],
-                  rotate: [0, 270, 540],
-                  scale: [0.7, 1.4, 0.7],
+                  opacity: [0.3, 0.7, 0.3],
                 }}
                 transition={{
-                  duration: 10 + Math.random() * 4,
+                  duration: 8,
                   repeat: Infinity,
-                  delay: index * 0.8,
+                  delay: index * 1,
                   ease: "easeInOut",
                 }}
                 style={{
-                  left: `${3 + (index % 5) * 19}%`,
-                  top: `${7 + Math.floor(index / 5) * 27}%`,
-                  textShadow: `0 0 25px rgba(245, 158, 11, 0.4)`
+                  left: `${5 + (index % 3) * 30}%`,
+                  top: `${15 + Math.floor(index / 3) * 30}%`,
+                  textShadow: `0 0 15px rgba(245, 158, 11, 0.3)`
                 }}
               >
                 {word.text}
@@ -3514,29 +3298,25 @@ function App() {
             ))}
           </div>
           
-          {/* Enhanced Education Achievement Bubbles */}
+          {/* Simplified Education Achievement Bubbles for Mobile */}
           <div className="absolute inset-0 pointer-events-none">
-            {[...Array(30)].map((_, i) => (
+            {[...Array(8)].map((_, i) => (
               <motion.div
                 key={`education-achievement-bubble-${i}`}
                 className="absolute rounded-full bg-gradient-to-br from-amber-400/8 to-yellow-400/5 border border-amber-400/15"
                 style={{
-                  width: Math.random() * 75 + 25,
-                  height: Math.random() * 75 + 25,
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
+                  width: 40,
+                  height: 40,
+                  left: `${10 + (i % 4) * 25}%`,
+                  top: `${20 + Math.floor(i / 4) * 30}%`,
                 }}
                 animate={{
-                  y: [0, -260 - Math.random() * 110],
-                  x: [0, Math.random() * 120 - 60],
-                  opacity: [0, 0.8, 0],
-                  scale: [0.4, 1.3, 0.2],
-                  rotate: [0, 180, 360],
+                  opacity: [0, 0.5, 0],
                 }}
                 transition={{
-                  duration: 11 + Math.random() * 5,
+                  duration: 8,
                   repeat: Infinity,
-                  delay: Math.random() * 4,
+                  delay: i * 0.8,
                   ease: "easeInOut",
                 }}
               />
@@ -3614,15 +3394,15 @@ function App() {
               Education
             </motion.h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {educationList.map((edu, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="glass-card p-8 flex flex-col h-full shadow-lg border border-teal-400/20 dark:border-teal-400/10 transition-all duration-300 bg-white/80 dark:bg-gray-900/80"
-                whileHover={{ scale: 1.05, y: -5, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                className="glass-card p-4 sm:p-6 md:p-8 flex flex-col h-full shadow-lg border border-teal-400/20 dark:border-teal-400/10 transition-all duration-300 bg-white/80 dark:bg-gray-900/80"
+                whileHover={{ scale: 1.02, y: -3, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 {edu.isHighlighted && (
@@ -3689,88 +3469,63 @@ function App() {
       </section>
 
       {/* Contact Section (WhatsApp, Email, Phone as buttons) */}
-      <section id="contact" className="py-20 relative overflow-hidden">
+      <section id="contact" className="py-12 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-300 via-slate-100 to-slate-300 dark:from-slate-700 dark:via-slate-900 dark:to-slate-700 opacity-90"></div>
         
         {/* Enhanced Background Animations for Contact Section - More Frequent */}
         <div className="absolute inset-0">
-          {/* Multiple Layers of Floating Particles */}
+          {/* Minimal Floating Particles */}
           <div className="absolute inset-0">
-            {/* Layer 1: Communication particles - Increased */}
-            {[...Array(30)].map((_, i) => (
+            {/* Layer 1: Communication particles - Greatly Reduced */}
+            {[...Array(8)].map((_, i) => (
               <motion.div
                 key={`contact-particles-${i}`}
                 className="absolute w-1.5 h-1.5 bg-pink-400/12 rounded-full"
-                initial={{
-                  x: Math.random() * 100 + 10,
-                  y: Math.random() * 100 + 10,
+                style={{
+                  left: `${10 + i * 12}%`,
+                  top: `${30 + (i % 4) * 15}%`,
                 }}
                 animate={{
-                  y: [0, -230 - Math.random() * 100],
-                  x: [0, Math.random() * 130 - 65],
-                  opacity: [0, 0.8, 0],
-                  scale: [1, 2, 1],
+                  opacity: [0, 0.5, 0],
                 }}
                 transition={{
-                  duration: Math.random() * 6 + 4,
+                  duration: 6,
                   repeat: Infinity,
-                  delay: Math.random() * 3,
+                  delay: i * 0.5,
                   ease: "easeInOut",
-                }}
-                style={{
-                  left: `${(i % 7) * 14}%`,
-                  top: `${Math.floor(i / 7) * 22}%`,
                 }}
               />
             ))}
             
-            {/* Layer 2: Connection bubbles - Increased */}
-            {[...Array(22)].map((_, i) => (
+            {/* Layer 2: Minimal Connection bubbles */}
+            {[...Array(5)].map((_, i) => (
               <motion.div
                 key={`contact-bubbles-${i}`}
                 className="absolute w-3.5 h-3.5 bg-gradient-to-br from-pink-400/9 to-rose-400/7 rounded-full blur-sm"
-                initial={{
-                  x: Math.random() * 100 + 10,
-                  y: Math.random() * 100 + 10,
+                style={{
+                  left: `${20 + i * 15}%`,
+                  top: `${50 + (i % 2) * 20}%`,
                 }}
                 animate={{
-                  y: [0, -200 - Math.random() * 90],
-                  x: [0, Math.random() * 110 - 55],
-                  opacity: [0, 0.7, 0],
-                  scale: [0.3, 1.7, 0.3],
-                  rotate: [0, 360],
+                  opacity: [0, 0.4, 0],
                 }}
                 transition={{
-                  duration: Math.random() * 8 + 6,
+                  duration: 7,
                   repeat: Infinity,
-                  delay: Math.random() * 5,
+                  delay: i * 0.7,
                   ease: "easeInOut",
-                }}
-                style={{
-                  left: `${5 + (i % 6) * 15}%`,
-                  top: `${8 + Math.floor(i / 6) * 24}%`,
                 }}
               />
             ))}
           </div>
           
-          {/* Enhanced Floating Contact Keywords - More Frequent */}
+          {/* Reduced Contact Keywords */}
           <div className="absolute inset-0 pointer-events-none">
             {[
               { text: "Connect", color: "from-pink-400 to-rose-400" },
-              { text: "Reach", color: "from-rose-400 to-pink-400" },
-              { text: "Message", color: "from-fuchsia-400 to-pink-400" },
-              { text: "Collaborate", color: "from-pink-400 to-purple-400" },
               { text: "Contact", color: "from-purple-400 to-pink-400" },
-              { text: "Chat", color: "from-rose-400 to-fuchsia-400" },
-              { text: "Talk", color: "from-pink-400 to-rose-400" },
-              { text: "Discuss", color: "from-fuchsia-400 to-purple-400" },
-              { text: "Network", color: "from-purple-400 to-violet-400" },
-              { text: "Communicate", color: "from-rose-400 to-pink-400" },
-              { text: "Call", color: "from-pink-400 to-fuchsia-400" },
               { text: "Email", color: "from-violet-400 to-purple-400" },
-              { text: "WhatsApp", color: "from-green-400 to-emerald-400" },
-              { text: "Social", color: "from-cyan-400 to-blue-400" }
+              { text: "WhatsApp", color: "from-green-400 to-emerald-400" }
             ].map((word, index) => (
               <motion.span
                 key={`contact-${word.text}`}
@@ -3781,28 +3536,16 @@ function App() {
                   opacity: 0,
                 }}
                 animate={{
-                  x: [
-                    Math.random() * 370 - 185,
-                    Math.random() * 470 - 235,
-                    Math.random() * 370 - 185
-                  ],
-                  y: [
-                    Math.random() * 370 - 185,
-                    Math.random() * 470 - 235,
-                    Math.random() * 370 - 185
-                  ],
-                  opacity: [0, 0.9, 0],
-                  rotate: [0, 360, 720],
-                  scale: [0.6, 1.5, 0.6],
+                  opacity: [0.3, 0.7, 0.3],
                 }}
                 transition={{
-                  duration: 12 + Math.random() * 5,
+                  duration: 7,
                   repeat: Infinity,
-                  delay: index * 0.9,
+                  delay: index * 1,
                   ease: "easeInOut",
                 }}
                 style={{
-                  left: `${2 + (index % 6) * 16}%`,
+                  left: `${15 + index * 20}%`,
                   top: `${5 + Math.floor(index / 6) * 26}%`,
                   textShadow: `0 0 30px rgba(236, 72, 153, 0.4)`
                 }}
@@ -3814,22 +3557,19 @@ function App() {
           
           {/* Enhanced Contact Communication Bubbles */}
           <div className="absolute inset-0 pointer-events-none">
-            {[...Array(35)].map((_, i) => (
+            {[...Array(6)].map((_, i) => (
               <motion.div
                 key={`contact-comm-bubble-${i}`}
                 className="absolute rounded-full bg-gradient-to-br from-pink-400/8 to-rose-400/5 border border-pink-400/15"
                 style={{
-                  width: Math.random() * 80 + 25,
-                  height: Math.random() * 80 + 25,
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
+                  width: 40,
+                  height: 40,
+                  left: `${10 + i * 15}%`,
+                  top: `${30 + (i % 3) * 20}%`,
                 }}
                 animate={{
-                  y: [0, -290 - Math.random() * 130],
-                  x: [0, Math.random() * 140 - 70],
-                  opacity: [0, 0.8, 0],
-                  scale: [0.3, 1.4, 0.1],
-                  rotate: [0, 300, 600],
+                  opacity: [0, 0.5, 0],
+                  scale: [0.8, 1, 0.8],
                 }}
                 transition={{
                   duration: 14 + Math.random() * 6,
@@ -3920,7 +3660,7 @@ function App() {
             className="max-w-2xl mx-auto"
           >
             <motion.div 
-              className="glass-card p-12 flex flex-col items-center text-center shadow-2xl border border-teal-400/30 dark:border-teal-400/20 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 rounded-2xl"
+              className="glass-card p-6 sm:p-8 md:p-12 flex flex-col items-center text-center shadow-2xl border border-teal-400/30 dark:border-teal-400/20 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 rounded-2xl"
               whileHover={{ 
                 scale: 1.02, 
                 y: -8, 
@@ -3936,16 +3676,16 @@ function App() {
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="mb-6"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Mail className="w-8 h-8 text-white" />
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+                  <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold mb-3 text-gray-900 dark:text-white bg-gradient-to-r from-teal-600 to-teal-800 dark:from-teal-400 dark:to-teal-600 bg-clip-text text-transparent">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3 text-gray-900 dark:text-white bg-gradient-to-r from-teal-600 to-teal-800 dark:from-teal-400 dark:to-teal-600 bg-clip-text text-transparent">
                   Let's Connect
                 </h3>
               </motion.div>
               
               <motion.p 
-                className="text-gray-600 dark:text-gray-300 mb-10 max-w-lg text-lg leading-relaxed"
+                className="text-gray-600 dark:text-gray-300 mb-6 sm:mb-10 max-w-lg text-base sm:text-lg leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -3956,7 +3696,7 @@ function App() {
               </motion.p>
               
               <motion.div 
-                className="flex flex-row justify-center gap-6 w-full"
+                className="flex flex-row flex-wrap justify-center gap-4 sm:gap-6 w-full"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -3966,7 +3706,7 @@ function App() {
                   href="https://wa.me/919528114494?text=Hello%20Mirza%20Yoosha%2C%20I%20found%20your%20portfolio%20impressive%20and%20would%20like%20to%20discuss%20potential%20opportunities."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-4 rounded-2xl bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/80 dark:to-green-800/80 text-green-700 dark:text-green-300 transition-all duration-300 flex flex-col items-center justify-center shadow-lg border border-green-200 dark:border-green-700 min-w-[120px]"
+                  className="group p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/80 dark:to-green-800/80 text-green-700 dark:text-green-300 transition-all duration-300 flex flex-col items-center justify-center shadow-lg border border-green-200 dark:border-green-700 min-w-[100px] sm:min-w-[120px]"
                   title="WhatsApp"
                   whileHover={{ 
                     scale: 1.05, 
@@ -3980,17 +3720,17 @@ function App() {
                     whileHover={{ rotate: 10 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8 mb-1 sm:mb-2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 14.487c-.263-.131-1.558-.77-1.799-.858-.241-.088-.417-.131-.593.132-.175.263-.676.858-.828 1.033-.151.175-.304.197-.567.066-.263-.132-1.111-.409-2.117-1.304-.782-.696-1.31-1.556-1.464-1.819-.151-.263-.016-.405.115-.536.118-.117.263-.304.395-.456.132-.151.175-.263.263-.438.088-.175.044-.329-.022-.46-.066-.132-.593-1.433-.813-1.963-.214-.514-.432-.444-.593-.452l-.504-.009c-.175 0-.46.066-.701.329-.241.263-.92.899-.92 2.192 0 1.293.942 2.544 1.073 2.719.132.175 1.853 2.83 4.49 3.852.628.271 1.117.433 1.499.554.63.2 1.204.172 1.658.104.506-.075 1.558-.637 1.779-1.253.221-.616.221-1.143.154-1.253-.066-.11-.241-.175-.504-.307z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 12c0-4.97-4.03-9-9-9s-9 4.03-9 9c0 1.591.416 3.085 1.14 4.374L3 21l4.755-1.247A8.963 8.963 0 0012 21c4.97 0 9-4.03 9-9z" />
                     </svg>
                   </motion.div>
-                  <span className="text-sm font-semibold group-hover:text-green-800 dark:group-hover:text-green-200 transition-colors">WhatsApp</span>
+                  <span className="text-xs sm:text-sm font-semibold group-hover:text-green-800 dark:group-hover:text-green-200 transition-colors">WhatsApp</span>
                 </motion.a>
 
                 <motion.a
                   href="mailto:yoosha786@gmail.com?subject=Project%20Inquiry&body=Hello%20Mirza%20Yoosha%2C%0A%0AI%20found%20your%20portfolio%20impressive%20and%20would%20like%20to%20discuss%20a%20potential%20project.%0A%0ABest%20regards"
-                  className="group p-4 rounded-2xl bg-gradient-to-br from-teal-100 to-teal-200 dark:from-teal-900/80 dark:to-teal-800/80 text-teal-700 dark:text-teal-300 transition-all duration-300 flex flex-col items-center justify-center shadow-lg border border-teal-200 dark:border-teal-700 min-w-[120px]"
+                  className="group p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-teal-100 to-teal-200 dark:from-teal-900/80 dark:to-teal-800/80 text-teal-700 dark:text-teal-300 transition-all duration-300 flex flex-col items-center justify-center shadow-lg border border-teal-200 dark:border-teal-700 min-w-[100px] sm:min-w-[120px]"
                   title="Email"
                   whileHover={{ 
                     scale: 1.05, 
@@ -4004,14 +3744,14 @@ function App() {
                     whileHover={{ rotate: -10 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Mail className="w-8 h-8 mb-2" />
+                    <Mail className="w-6 h-6 sm:w-8 sm:h-8 mb-1 sm:mb-2" />
                   </motion.div>
-                  <span className="text-sm font-semibold group-hover:text-teal-800 dark:group-hover:text-teal-200 transition-colors">Email</span>
+                  <span className="text-xs sm:text-sm font-semibold group-hover:text-teal-800 dark:group-hover:text-teal-200 transition-colors">Email</span>
                 </motion.a>
 
                 <motion.a
                   href="tel:+919528114494"
-                  className="group p-4 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800/80 dark:to-gray-700/80 text-gray-700 dark:text-gray-300 transition-all duration-300 flex flex-col items-center justify-center shadow-lg border border-gray-200 dark:border-gray-600 min-w-[120px]"
+                  className="group p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800/80 dark:to-gray-700/80 text-gray-700 dark:text-gray-300 transition-all duration-300 flex flex-col items-center justify-center shadow-lg border border-gray-200 dark:border-gray-600 min-w-[100px] sm:min-w-[120px]"
                   title="Phone"
                   whileHover={{ 
                     scale: 1.05, 
@@ -4025,11 +3765,11 @@ function App() {
                     whileHover={{ rotate: 10 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8 mb-1 sm:mb-2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-2.25a2.25 2.25 0 00-2.25-2.25h-2.25a.75.75 0 01-.75-.75v-2.25a.75.75 0 01.75-.75h2.25a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0018.75 4.5h-1.5c-8.284 0-15 6.716-15 15z" />
                     </svg>
                   </motion.div>
-                  <span className="text-sm font-semibold group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors">Call</span>
+                  <span className="text-xs sm:text-sm font-semibold group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors">Call</span>
                 </motion.a>
               </motion.div>
 
@@ -4077,7 +3817,7 @@ function App() {
 
       {/* Enhanced 3D Voice Chatbot Widget - Opens in New Tab */}
       {/* Revolutionary AI Chatbot - Bottom Right Position */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50">
         {/* Attention-Grabbing Header with Instant Notification + Delayed Animations */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8, y: -20 }}
@@ -4134,12 +3874,10 @@ function App() {
             >
               <motion.div
                 animate={{
-                  rotate: [0, -15, 15, -10, 10, 0],
-                  scale: [1, 1.2, 1],
+                  scale: [1, 1.1, 1],
                 }}
                 transition={{
-                  rotate: { delay: 1.8, duration: 0.6, ease: "easeInOut" },
-                  scale: { delay: 2.5, duration: 2, repeat: Infinity, ease: "easeInOut" }
+                  scale: { delay: 2.5, duration: 4, repeat: Infinity, ease: "easeInOut" }
                 }}
                 className="w-6 h-6 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg border-2 border-white"
               >
@@ -4154,16 +3892,15 @@ function App() {
               transition={{ delay: 4, duration: 0.5 }}
               className="absolute inset-0"
             >
-              {/* Delayed Pulsing Background after static period */}
+              {/* Simplified pulsing background */}
               <motion.div
-                initial={{ scale: 1, opacity: 0 }}
+                initial={{ opacity: 0 }}
                 animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0, 0.8, 0],
+                  opacity: [0, 0.3, 0],
                 }}
                 transition={{
                   delay: 4.5,
-                  duration: 2,
+                  duration: 4,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
@@ -4172,7 +3909,7 @@ function App() {
             </motion.div>
           </motion.div>
           
-          {/* Delayed Enhanced Color Animations */}
+          {/* Simplified Text Animations */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -4181,49 +3918,30 @@ function App() {
           >
             <motion.p
               animate={{ 
-                textShadow: [
-                  "0 0 20px rgba(147, 51, 234, 0.8)",
-                  "0 0 30px rgba(59, 130, 246, 1)",
-                  "0 0 25px rgba(6, 182, 212, 0.9)",
-                  "0 0 20px rgba(147, 51, 234, 0.8)"
-                ],
-                color: [
-                  "rgb(255, 255, 255)",
-                  "rgb(196, 181, 253)",
-                  "rgb(147, 197, 253)",
-                  "rgb(255, 255, 255)"
-                ]
+                opacity: [0.8, 1, 0.8],
               }}
               transition={{
-                textShadow: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                color: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                opacity: { duration: 4, repeat: Infinity, ease: "easeInOut" },
               }}
-              className="text-sm font-black tracking-wide uppercase absolute top-3 left-4 right-4 z-20 text-center pointer-events-none"
+              className="text-sm font-black tracking-wide uppercase absolute top-3 left-4 right-4 z-20 text-center pointer-events-none text-white"
+              style={{
+                textShadow: "0 0 15px rgba(147, 51, 234, 0.6)"
+              }}
             >
               🤖 CLICK TO CHAT NOW!
             </motion.p>
           </motion.div>
           
-          {/* Curiosity Spark with Delayed Animation */}
+          {/* Simplified Spark Animation */}
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 6, type: "spring", stiffness: 300 }}
             className="absolute -bottom-2 -left-2"
           >
-            <motion.div
-              animate={{
-                rotate: [0, 360],
-                scale: [1, 1.3, 1],
-              }}
-              transition={{
-                rotate: { duration: 8, repeat: Infinity, ease: "linear" },
-                scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-              }}
-              className="w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg"
-            >
+            <div className="w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">
               ✨
-            </motion.div>
+            </div>
           </motion.div>
         </motion.div>
 
@@ -4243,10 +3961,8 @@ function App() {
             }
           }}
           whileHover={{ 
-            scale: 1.2, 
-            y: -8,
-            rotateY: 20,
-            rotateX: 15
+            scale: 1.1, 
+            y: -5
           }}
           whileTap={{ scale: 0.95 }}
           animate={{
@@ -4269,27 +3985,23 @@ function App() {
             filter: { duration: 3, repeat: Infinity, ease: "easeInOut" },
             y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
           }}
-          className="relative w-24 h-24 bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden group cursor-pointer transform-gpu"
+          className="relative w-24 h-24 bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden group cursor-pointer"
           style={{ 
-            transformStyle: 'preserve-3d',
             background: 'linear-gradient(135deg, #8b5cf6 0%, #3b82f6 30%, #06b6d4 60%, #10b981 90%)'
           }}
         >
           {/* Enhanced Holographic Background */}
           <motion.div
             animate={{ 
-              rotateY: 360,
-              rotateX: [0, 45, 0],
-              rotateZ: [0, 10, -10, 0]
+              opacity: [0.4, 0.6, 0.4],
+              scale: [1, 1.05, 1]
             }}
             transition={{ 
-              rotateY: { duration: 20, repeat: Infinity, ease: "linear" },
-              rotateX: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-              rotateZ: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+              opacity: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
             }}
             className="absolute inset-0 opacity-40"
             style={{ 
-              transformStyle: 'preserve-3d',
               background: 'conic-gradient(from 0deg, rgba(139, 92, 246, 0.6), rgba(59, 130, 246, 0.6), rgba(6, 182, 212, 0.6), rgba(16, 185, 129, 0.6), rgba(139, 92, 246, 0.6))'
             }}
           />
@@ -4310,72 +4022,47 @@ function App() {
           
           {/* Spectacular Particle System */}
           <div className="absolute inset-0">
-            {[...Array(12)].map((_, i) => (
+            {[...Array(5)].map((_, i) => (
               <motion.div
                 key={i}
                 className="absolute rounded-full"
                 animate={{
-                  x: [
-                    Math.cos((i * 30) * Math.PI / 180) * 30,
-                    Math.cos((i * 30 + 120) * Math.PI / 180) * 35,
-                    Math.cos((i * 30 + 240) * Math.PI / 180) * 32,
-                    Math.cos((i * 30) * Math.PI / 180) * 30
-                  ],
-                  y: [
-                    Math.sin((i * 30) * Math.PI / 180) * 30,
-                    Math.sin((i * 30 + 120) * Math.PI / 180) * 35,
-                    Math.sin((i * 30 + 240) * Math.PI / 180) * 32,
-                    Math.sin((i * 30) * Math.PI / 180) * 30
-                  ],
-                  z: [0, Math.sin(i * 0.5) * 15, 0],
-                  opacity: [0.4, 1, 0.6, 0.4],
-                  scale: [0.8, 1.4, 1.1, 0.8],
-                  rotateX: [0, 180, 360],
-                  rotateY: [0, 360],
+                  opacity: [0.4, 0.6, 0.4],
                 }}
                 transition={{
-                  duration: 6 + Math.random() * 4,
+                  duration: 6,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: i * 0.3,
+                  delay: i * 0.5,
                 }}
                 style={{
-                  width: Math.random() * 3 + 1,
-                  height: Math.random() * 3 + 1,
+                  width: 2,
+                  height: 2,
                   background: `linear-gradient(45deg, 
                     ${i % 3 === 0 ? 'rgba(139, 92, 246, 0.8)' : 
                       i % 3 === 1 ? 'rgba(59, 130, 246, 0.8)' : 
                       'rgba(6, 182, 212, 0.8)'})`,
-                  left: '50%',
-                  top: '50%',
-                  transformStyle: 'preserve-3d',
+                  left: `${45 + i * 2}%`,
+                  top: `${45 + i * 2}%`,
                 }}
               />
             ))}
           </div>
 
-          {/* Revolutionary Chatbot Icon Cluster - More Appealing */}
+          {/* Revolutionary Chatbot Icon Cluster - Simplified */}
           <motion.div
             animate={{ 
-              rotateY: [0, 360],
-              scale: [1, 1.2, 1],
-              rotateX: [0, 20, 0],
-              rotateZ: [0, 8, -8, 0]
+              scale: [0.95, 1, 0.95]
             }}
             transition={{ 
-              rotateY: { duration: 6, repeat: Infinity, ease: "linear" },
-              scale: { duration: 2.5, repeat: Infinity, ease: "easeInOut" },
-              rotateX: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
-              rotateZ: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+              scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
             }}
             className="relative z-20"
-            style={{ transformStyle: 'preserve-3d' }}
           >
             {/* Main Robot Head - Dominant and Appealing */}
             <motion.div
               animate={{ 
                 y: [0, -5, 0],
-                rotateZ: [0, 12, -12, 0],
                 scale: [1, 1.1, 1],
                 filter: [
                   "drop-shadow(0 0 15px rgba(255, 255, 255, 1)) drop-shadow(0 0 25px rgba(139, 92, 246, 0.8))",
@@ -4388,7 +4075,6 @@ function App() {
                 repeat: Infinity, 
                 ease: "easeInOut" 
               }}
-              style={{ transformStyle: 'preserve-3d' }}
               className="relative"
             >
               {/* Chatbot Robot Head Design with Better Visibility */}
@@ -4523,7 +4209,6 @@ function App() {
                 opacity: [0.7, 1, 0.7],
                 x: [0, 4, 0],
                 y: [0, -4, 0],
-                rotateZ: [0, 360],
                 filter: [
                   "drop-shadow(0 0 8px rgba(34, 197, 94, 0.8))",
                   "drop-shadow(0 0 15px rgba(34, 197, 94, 1.2))",
@@ -4537,7 +4222,6 @@ function App() {
                 delay: 1.2
               }}
               className="absolute top-1 right-1"
-              style={{ transformStyle: 'preserve-3d' }}
             >
               <Mic size={14} className="text-green-300 drop-shadow-lg" />
               
@@ -4561,9 +4245,7 @@ function App() {
               animate={{ 
                 scale: [0.8, 1.1, 0.8],
                 opacity: [0.8, 1, 0.8],
-                x: [0, 4, 0],
-                rotateZ: [0, -20, 0],
-                rotateY: [0, 180, 360]
+                x: [0, 4, 0]
               }}
               transition={{ 
                 duration: 2.2, 
@@ -4572,7 +4254,6 @@ function App() {
                 delay: 0.4
               }}
               className="absolute -bottom-1 -right-1"
-              style={{ transformStyle: 'preserve-3d' }}
             >
               <Database size={16} className="text-cyan-200 drop-shadow-lg" />
               
@@ -4597,9 +4278,7 @@ function App() {
               animate={{ 
                 scale: [0.7, 1, 0.7],
                 opacity: [0.7, 1, 0.7],
-                x: [0, -4, 0],
-                rotateZ: [0, 20, 0],
-                rotateX: [0, 360]
+                x: [0, -4, 0]
               }}
               transition={{ 
                 duration: 2.6, 
@@ -4608,7 +4287,6 @@ function App() {
                 delay: 0.8
               }}
               className="absolute -top-1 -left-1"
-              style={{ transformStyle: 'preserve-3d' }}
             >
               <Layers size={14} className="text-purple-200 drop-shadow-lg" />
               
@@ -4634,9 +4312,7 @@ function App() {
               key={i}
               animate={{
                 scale: [1, 2.5 + i * 0.3, 1],
-                opacity: [0.8 - i * 0.1, 0, 0.8 - i * 0.1],
-                rotateZ: [0, 360],
-                rotateY: [0, 180]
+                opacity: [0.8 - i * 0.1, 0, 0.8 - i * 0.1]
               }}
               transition={{
                 duration: 3 + i * 0.5,
@@ -4649,7 +4325,6 @@ function App() {
                 i === 1 ? 'border-purple-400/50' :
                 i === 2 ? 'border-blue-400/40' : 'border-cyan-400/30'
               }`}
-              style={{ transformStyle: 'preserve-3d' }}
             />
           ))}
 
@@ -4658,14 +4333,12 @@ function App() {
             initial={{ 
               opacity: 0, 
               x: -20, 
-              scale: 0.8,
-              rotateY: 15 
+              scale: 0.8
             }}
             whileHover={{ 
               opacity: 1, 
               x: 0, 
               scale: 1,
-              rotateY: 0,
               boxShadow: "0 25px 50px rgba(0, 0, 0, 0.4)"
             }}
             transition={{ 
@@ -4674,7 +4347,6 @@ function App() {
               damping: 25 
             }}
             className="absolute right-full mr-6 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-gray-800/98 via-gray-900/98 to-black/98 backdrop-blur-xl text-white px-6 py-4 rounded-3xl whitespace-nowrap pointer-events-none border-2 border-purple-500/60 shadow-2xl overflow-hidden"
-            style={{ transformStyle: 'preserve-3d' }}
           >
             {/* Animated Background */}
             <motion.div
@@ -4692,7 +4364,6 @@ function App() {
             <div className="flex items-center gap-4 relative z-10">
               <motion.div
                 animate={{ 
-                  rotateY: [0, 360],
                   scale: [1, 1.1, 1]
                 }}
                 transition={{ 
@@ -4719,25 +4390,23 @@ function App() {
             {/* Arrow Pointer - Now pointing right */}
             <div className="absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-r-0 border-l-12 border-t-8 border-b-8 border-transparent border-l-gray-800/98"></div>
             
-            {/* Sparkle Effects */}
-            {[...Array(6)].map((_, i) => (
+            {/* Sparkle Effects - Simplified */}
+            {[...Array(3)].map((_, i) => (
               <motion.div
                 key={i}
                 animate={{
-                  scale: [0, 1, 0],
-                  opacity: [0, 1, 0],
-                  rotate: [0, 180, 360]
+                  opacity: [0, 0.7, 0],
                 }}
                 transition={{
-                  duration: 2,
+                  duration: 4,
                   repeat: Infinity,
-                  delay: i * 0.3,
+                  delay: i * 1,
                   ease: "easeInOut"
                 }}
                 className="absolute w-1 h-1 bg-cyan-400 rounded-full"
                 style={{
-                  left: `${20 + Math.random() * 60}%`,
-                  top: `${20 + Math.random() * 60}%`,
+                  left: `${25 + i * 25}%`,
+                  top: `${30 + i * 20}%`,
                 }}
               />
             ))}
